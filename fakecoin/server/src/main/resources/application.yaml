@@ -1,0 +1,32 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: fakecoin
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  cloud:
+    stream:
+      default-binder: rabbit
+      bindings:
+        transactions:
+          destination: transactions
+          group: group1
+          content-type: application/x-java-object;type=be.ordina.fakecoin.transaction.TransactionEvent
+
+
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  security:
+    enabled: false
+
+fakecoin:
+  difficulty: 5

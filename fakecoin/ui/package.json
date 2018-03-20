@@ -1,0 +1,23 @@
+{
+  "name": "fakecoin-ui",
+  "version": "0.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "atob": "^2.0.3",
+    "axios": "^0.18.0",
+    "body-parser": "~1.18.2",
+    "btoa": "^1.1.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "elliptic": "^6.4.0",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
+  }
+}

@@ -1,0 +1,8 @@
+*.iml
+*.ipr
+*.iws
+node_modules/
+Dockerfile
+Dockerfile.solution
+docker-compose.yml
+docker-compose.solution.yml

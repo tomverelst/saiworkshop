@@ -1,0 +1,68 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="wallet">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    
+    <title>FakeCoin</title>
+    
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #tx-list              { margin-bottom:30px; }
+    </style>
+    
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+
+</head>
+<body ng-controller="mainController">
+<div class="container">
+    
+    <div class="jumbotron text-center">
+        <h1>FakeCoin</h1>
+    </div>
+    
+    <div id="tx-list" class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            
+            <div ng-repeat="wallet in wallets">
+                <div><label>Address: </label></div>
+                <div>{{ wallet.address}}</div>
+                <div><label>Name: </label></div>
+                <div>{{ wallet.name}}</div>
+                <div><label>Balance: </label></div>
+                <div>{{ wallet.balance}}</div>
+                <hr />
+            </div>
+        
+        </div>
+    </div>
+    
+    <!-- Form to create transactions -->
+    <div id="transaction-form" class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Sender" class="form-control input-lg text-center" ng-model="formData.sender">
+                    <input type="text" placeholder="Recipient" class="form-control input-lg text-center" ng-model="formData.recipient">
+                    <input type="text" placeholder="Amount" class="form-control input-lg text-center" ng-model="formData.funds">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="createTransaction()">Add</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
